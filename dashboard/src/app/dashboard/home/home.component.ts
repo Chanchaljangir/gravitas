@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { jsPDF } from 'jspdf';
 import html2canvas from 'html2canvas';
+import { DashboardServiceService } from '../service/dashboard-service.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -38,10 +39,12 @@ export class HomeComponent implements OnInit {
 
   columnNames: any;
   data: any;
+  loading: boolean;
+  chartDataArr: any;
+  lineChart = []
 
 
-
-  constructor() { }
+  constructor(private dashboardService:DashboardServiceService) { }
 
   ngOnInit() {
     this.columnNames = ["Month", "Line Conversation"]
@@ -81,9 +84,40 @@ export class HomeComponent implements OnInit {
         ["Dec", 920]
       ]
     }
+    this.getData();
   }
   getData(){
-    
+    this.dashboardService.getAllChartData().subscribe((res: any) => {
+      this.loading = false;
+      if (res.IsSuccess) {
+        this.loading = false;
+        this.chartDataArr = res.Data;
+        this.dataVisualization()
+      } else {
+        this.loading = false;
+      }
+    });
+  }
+  dataVisualization(){
+    this.chartDataArr.forEach((element,i) => {
+      let chartData = {
+        options: {
+          legend: { position: 'top' },
+        },
+        width: 270,
+        height: 400,
+        columnNames: ["Month", element.title],
+        data:[]
+      }
+      element.data.forEach((data,j) => {
+        const dateChange = new Date(data.date);
+        chartData.data.push([
+          [`${dateChange.getUTCDate()} ${dateChange.getUTCMonth()+1}`, data.value],
+        ])
+      });
+      this.lineChart.push(chartData)
+    });
+    console.log("this.lineChart",this.lineChart)
   }
   onExportSelect(e) {
     let eventData = e.target.value

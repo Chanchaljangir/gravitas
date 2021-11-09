@@ -28,7 +28,8 @@ module.exports = {
         try {
             let filter = req.query.sort;
             // {$text: {$search: req.query.search}}
-            let result = await chartData.find().sort({ filter: 1 })
+            let result = await chartData.find()
+            // .sort({ filter: 1 })
 
             respObj.IsSuccess = true;
             respObj.Data = result
