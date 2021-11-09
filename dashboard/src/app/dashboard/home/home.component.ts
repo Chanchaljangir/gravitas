@@ -102,6 +102,7 @@ export class HomeComponent implements OnInit {
   dataVisualization(){
     this.chartDataArr.forEach((element,i) => {
       let chartData = {
+        id: element._id,
         options: {
           legend: { position: 'top' },
         },

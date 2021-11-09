@@ -1,1 +1,55 @@
-<p>dashboard works</p>
+<div class="container">
+    <div class="card mt-4">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-xl-2 col-lg-12 col-md-12 d-flex align-items-center my-2">
+                    <i class="fab fa-galactic-republic text-success me-2 fa-lg"></i>
+                    <p class="h5 text-success text-uppercase mb-0">Filter</p>
+                    <!-- <a href="" class="logo"><img src="" alt=""></a> -->
+                </div>
+                <div class="col-xl-3 col-lg-6 col-md-6 d-xl-flex align-items-center my-2">
+                    <label for="email" class="me-2 mb-0">Date:</label>
+                    <input type="date" class="form-control">
+                </div>
+                <div class="col-xl-3 col-lg-6 col-md-6 d-xl-flex align-items-center my-2">
+                    <label for="email" class="me-2 mb-0">To:</label>
+                    <input type="date" class="form-control">
+
+                </div>
+                <div class="col-xl-2 col-lg-6 col-md-6 d-flex align-items-center my-2">
+                    <select class="form-select">
+                        <option>Custome Range</option>
+                    </select>
+                </div>
+                <div class="col-xl-2 col-lg-6 col-md-6 d-flex align-items-center my-2">
+                    <select class="form-select" (change)="onExportSelect($event)">
+                        <option value="" selected disabled>Export Data</option>
+                        <option value="exportPdf">Export to pdf</option>
+                    </select>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div id="chartDivId">
+
+        <div class="row mt-4" *ngIf="loadChart">
+            <ng-container *ngFor="let chart of lineChart; let i=index">
+                <div class="col-lg-3 col-md-6 my-2">
+                    <div class="card">
+                        <div class="card-body chartBody">
+                            <p class="h5 text-secondary text-uppercase" [routerLink]="['/detail', chart?.id]">
+                                <google-chart [type]="Linetype" [data]="chart.data" [columnNames]="chart.columnNames"
+                                    [options]="chart.options" [width]="350"
+                                    style="width: 100%!important;border-radius: 24px !important;overflow: hidden;">
+                                </google-chart>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>
