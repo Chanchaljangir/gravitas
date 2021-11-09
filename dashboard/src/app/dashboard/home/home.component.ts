@@ -82,6 +82,9 @@ export class HomeComponent implements OnInit {
       ]
     }
   }
+  getData(){
+    
+  }
   onExportSelect(e) {
     let eventData = e.target.value
     if (eventData == 'exportPdf') this.htmltoPDF();
