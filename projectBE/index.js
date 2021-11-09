@@ -9,7 +9,6 @@ let mongoose = require("mongoose");
 // Init App
 var app = express();
 var server = http.createServer(app);
-
 //logger configurations
 var nlogParams = {
     consoleOutput: true,
