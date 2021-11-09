@@ -42,6 +42,7 @@ export class HomeComponent implements OnInit {
   loading: boolean;
   chartDataArr: any;
   lineChart = []
+  loadChart: boolean = false;
 
 
   constructor(private dashboardService:DashboardServiceService) { }
@@ -111,12 +112,13 @@ export class HomeComponent implements OnInit {
       }
       element.data.forEach((data,j) => {
         const dateChange = new Date(data.date);
-        chartData.data.push([
-          [`${dateChange.getUTCDate()} ${dateChange.getUTCMonth()+1}`, data.value],
-        ])
+        chartData.data.push(
+          [`${dateChange.getUTCDate()} ${dateChange.getUTCMonth()+1}`, parseInt(data.value)],
+        )
       });
       this.lineChart.push(chartData)
     });
+    this.loadChart = true;
     console.log("this.lineChart",this.lineChart)
   }
   onExportSelect(e) {
