@@ -53,20 +53,26 @@ export class HomeComponent implements OnInit {
       ["Dec", 920]
     ]
   }
-  htmltoPDF()
-  {
+  htmltoPDF() {
     setTimeout(() => {
-          html2canvas(document.querySelector("#chartDivId")).then(canvas => {
-    
-            var pdf = new jsPDF('p', 'pt', [canvas.width, canvas.height]);
-    
-            var imgData = canvas.toDataURL("image/jpeg", 1.0);
-            pdf.addImage(imgData, 0, 0, canvas.width, canvas.height);
-            // pdf.output('datauri');
-            pdf.save('dataRecord.pdf');
-    
-          });
-        }, 2000);
-    
+      // html2canvas(document.querySelector("#chartDivId")).then(canvas => {
+
+      //   var pdf = new jsPDF('p', 'pt', [canvas.width, canvas.height]);
+
+      //   var imgData = canvas.toDataURL("image/jpeg", 1.0);
+      //   pdf.addImage(imgData, 0, 0, canvas.width, canvas.height);
+      //   // pdf.output('datauri');
+      //   pdf.save('dataRecord.pdf');
+
+      // });
+      html2canvas(document.querySelector("#chartDivId")).then(canvas => {
+        const contentDataURL = canvas.toDataURL('image/png')
+        let pdf = new jsPDF('l', 'cm', 'a4'); //Generates PDF in landscape mode
+        // let pdf = new jspdf('p', 'cm', 'a4'); Generates PDF in portrait mode
+        pdf.addImage(contentDataURL, 'PNG', 0, 0, 29.7, 21.0);
+        pdf.save('Filename.pdf');
+      });
+    }, 2000);
+
   }
 }
