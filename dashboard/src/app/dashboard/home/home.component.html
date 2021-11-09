@@ -34,9 +34,9 @@
 
 
     <div id="chartDivId">
-        
-            <div class="row mt-4" *ngIf="loadChart">
-                <ng-container *ngFor="let chart of lineChart; let i=index">
+
+        <div class="row mt-4" *ngIf="loadChart">
+            <ng-container *ngFor="let chart of lineChart; let i=index">
                 <div class="col-lg-3 col-md-6 my-2">
                     <div class="card">
                         <div class="card-body chartBody">
@@ -50,8 +50,8 @@
                     </div>
                 </div>
             </ng-container>
-            </div>
-        <div class="row mt-4">
+        </div>
+        <!-- <div class="row mt-4">
             <div class="col-lg-3 col-md-6 my-2">
                 <div class="card">
                     <div class="card-body chartBody">
@@ -148,7 +148,7 @@
                     </p>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="row mt-4">
             <div class="col-md-6">
                 <div class="card">
@@ -156,33 +156,45 @@
                         <div class="d-flex align-items-center text-success">
                             <i class="far fa-heart fa-lg"></i>
                             <p class="text-success h4 mb-0 mx-2">
-                                heading text
+                                Most Common intents
                             </p>
                         </div>
                         <div class="table-responsive">
                             <table class="table table-borderless">
-                                <thead>
+                                <!-- <thead>
                                     <tr>
-                                        <th>Firstname</th>
-                                        <th>Lastname</th>
-                                        <th>Email</th>
                                     </tr>
-                                </thead>
+                                </thead> -->
                                 <tbody>
                                     <tr>
-                                        <td>John</td>
-                                        <td>Doe</td>
-                                        <td>john@example.com</td>
+                                        <td>payment</td>
+                                        <td></td>
+                                        <td>58.4%</td>
                                     </tr>
                                     <tr>
-                                        <td>Mary</td>
-                                        <td>Moe</td>
-                                        <td>mary@example.com</td>
+                                        <td>get_a_loan</td>
+                                        <td></td>
+                                        <td>15%</td>
                                     </tr>
                                     <tr>
-                                        <td>July</td>
-                                        <td>Dooley</td>
-                                        <td>july@example.com</td>
+                                        <td>consumer_loans</td>
+                                        <td></td>
+                                        <td>5%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>mortgage</td>
+                                        <td></td>
+                                        <td>5%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>help</td>
+                                        <td></td>
+                                        <td>4.5%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>support</td>
+                                        <td></td>
+                                        <td>4%</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -196,33 +208,45 @@
                         <div class="d-flex align-items-center text-success">
                             <i class="far fa-clock fa-lg"></i>
                             <p class="text-success h4 mb-0 mx-2">
-                                heading text
+                                Most active hours
                             </p>
                         </div>
                         <div class="table-responsive">
                             <table class="table table-borderless">
-                                <thead>
+                                <!-- <thead>
                                     <tr>
-                                        <th>Firstname</th>
-                                        <th>Lastname</th>
-                                        <th>Email</th>
                                     </tr>
-                                </thead>
+                                </thead> -->
                                 <tbody>
                                     <tr>
-                                        <td>John</td>
-                                        <td>Doe</td>
-                                        <td>john@example.com</td>
+                                        <td>12:00pm - 14:30pm</td>
+                                        <td></td>
+                                        <td>3,929 messages</td>
                                     </tr>
                                     <tr>
-                                        <td>Mary</td>
-                                        <td>Moe</td>
-                                        <td>mary@example.com</td>
+                                        <td>18:00pm - 19:10pm</td>
+                                        <td></td>
+                                        <td>1,143 messages</td>
                                     </tr>
                                     <tr>
-                                        <td>July</td>
-                                        <td>Dooley</td>
-                                        <td>july@example.com</td>
+                                        <td>10:00am - 11:10am</td>
+                                        <td></td>
+                                        <td>938 messages</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10:00am - 11:10am</td>
+                                        <td></td>
+                                        <td>938 messages</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10:00am - 11:10am</td>
+                                        <td></td>
+                                        <td>938 messages</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10:00am - 11:10am</td>
+                                        <td></td>
+                                        <td>938 messages</td>
                                     </tr>
                                 </tbody>
                             </table>
