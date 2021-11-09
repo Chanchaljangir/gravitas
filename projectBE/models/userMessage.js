@@ -9,7 +9,9 @@ const userMessageSchema = new Schema({
         required: true
     },
     data: [{
-        date: new Date(),
+        date: {
+            type: Date,
+        },
         value: String
     }],
     isDeleted: {

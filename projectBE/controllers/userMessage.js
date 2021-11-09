@@ -1,4 +1,4 @@
-const chartData = require("./userMessage");
+const chartData = require("../models/userMessage");
 
 module.exports = {
     async addData(req, res) {
