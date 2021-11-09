@@ -1,5 +1,4 @@
-const VisualizeData = require("./userMessage");
-
+const chartData = require("./userMessage");
 
 module.exports = {
     async addData(req, res) {
@@ -9,7 +8,7 @@ module.exports = {
             Data: null,
         };
         try {
-            let result = await new VisualizeData(req.body).save()
+            let result = await new chartData(req.body).save()
             respObj.IsSuccess = true;
             respObj.Message = "Susscefully added"
             res.status(200).json(respObj);
@@ -29,7 +28,7 @@ module.exports = {
         try {
             let filter = req.query.sort;
             // {$text: {$search: req.query.search}}
-            let result = await VisualizeData.find().sort({ filter: 1 })
+            let result = await chartData.find().sort({ filter: 1 })
 
             respObj.IsSuccess = true;
             respObj.Data = result
@@ -51,7 +50,7 @@ module.exports = {
         };
 
         try {
-            let result = await VisualizeData.findById({ _id: req.params.dataId })
+            let result = await chartData.findById({ _id: req.params.dataId })
 
             respObj.IsSuccess = true;
             respObj.Data = result
