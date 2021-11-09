@@ -6,10 +6,40 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  Linetype= 'LineChart'
+ 
+  chartData = {
+ options: {
+ hAxis: {
+       title: 'Month'
+    },
+    vAxis:{
+       title: 'Sell'
+    },
+ },
+ width: 1000,
+ height: 400
+};
+  columnNames: any;
+  data: any;
   constructor() { }
 
   ngOnInit() {
+    this.columnNames= ["Month", "Apple", "Mi"]
+    this.data= [
+      ["Jan",  500, 600],
+      ["Feb",  800, 900],
+      ["Mar",  400, 600],
+      ["Apr",  600, 500],
+      ["May",  400, 300],
+      ["Jun",  750, 700],
+      ["Jul",  800, 710],
+      ["Aug",  810, 720],
+      ["Sep",  820, 730],
+      ["Oct",  900, 840],
+      ["Nov",  910, 850],
+      ["Dec",  920, 890]
+   ]
   }
 
 }
