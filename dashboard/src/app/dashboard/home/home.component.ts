@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { jsPDF } from 'jspdf';
+import html2canvas from 'html2canvas';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -52,5 +53,20 @@ export class HomeComponent implements OnInit {
       ["Dec", 920]
     ]
   }
-
+  htmltoPDF()
+  {
+    setTimeout(() => {
+          html2canvas(document.querySelector("#chartDivId")).then(canvas => {
+    
+            var pdf = new jsPDF('p', 'pt', [canvas.width, canvas.height]);
+    
+            var imgData = canvas.toDataURL("image/jpeg", 1.0);
+            pdf.addImage(imgData, 0, 0, canvas.width, canvas.height);
+            // pdf.output('datauri');
+            pdf.save('dataRecord.pdf');
+    
+          });
+        }, 2000);
+    
+  }
 }

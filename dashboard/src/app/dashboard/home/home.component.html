@@ -6,6 +6,7 @@
                     <i class="fab fa-galactic-republic text-success me-2 fa-lg"></i>
                     <p class="h5 text-success text-uppercase mb-0">Filter</p>
                     <!-- <a href="" class="logo"><img src="" alt=""></a> -->
+                    <button type="button" (click)="htmltoPDF()">Export pdf</button>
                 </div>
                 <div class="col-xl-3 col-lg-6 col-md-6 d-xl-flex align-items-center my-2">
                     <label for="email" class="me-2 mb-0">Date:</label>
@@ -31,186 +32,190 @@
         </div>
     </div>
 
-    <div class="row mt-4">
-        <div class="col-lg-3 col-md-6 my-2">
-            <div class="card">
-                <div class="card-body chartBody">
-                    <p class="h5 text-secondary text-uppercase">
-                        <google-chart [type]="Linetype" [data]="data" [columnNames]="columnNames"
-                            [options]="chartData.options" [width]="350"
-                            style="width: 100%!important;border-radius: 24px !important;overflow: hidden;">
-                        </google-chart>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 my-2">
-            <div class="card">
-                <div class="card-body chartBody">
-                    <p class="h5 text-secondary text-uppercase">
-                        <google-chart [type]="Linetype" [data]="data" [columnNames]="columnNames"
-                            [options]="chartData.options" [width]="350"
-                            style="width: 100%!important;border-radius: 24px !important;overflow: hidden;">
-                        </google-chart>
-                    </p>
-                </div>
-            </div>
-
-        </div>
-        <div class="col-lg-3 col-md-6 my-2">
-            <div class="card">
-                <div class="card-body chartBody">
-                    <p class="h5 text-secondary text-uppercase">
-                        <google-chart [type]="Linetype" [data]="data" [columnNames]="columnNames"
-                            [options]="chartData.options" [width]="350"
-                            style="width: 100%!important;border-radius: 24px !important;overflow: hidden;">
-                        </google-chart>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 my-2">
-            <div class="card-body chartBody">
-                <p class="h5 text-secondary text-uppercase">
-                    <google-chart [type]="Linetype" [data]="data" [columnNames]="columnNames"
-                        [options]="chartData.options" [width]="350"
-                        style="width: 100%!important;border-radius: 24px !important;overflow: hidden;">
-                    </google-chart>
-                </p>
-            </div>
-        </div>
-    </div>
-    <div class="row mt-4">
-        <div class="col-lg-3 col-md-6 my-2">
-            <div class="card">
-                <div class="card-body chartBody">
-                    <p class="h5 text-secondary text-uppercase">
-                        <google-chart [type]="Linetype" [data]="data" [columnNames]="columnNames"
-                            [options]="chartData.options" [width]="350"
-                            style="width: 100%!important;border-radius: 24px !important;overflow: hidden;">
-                        </google-chart>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 my-2">
-            <div class="card">
-                <div class="card-body chartBody">
-                    <p class="h5 text-secondary text-uppercase">
-                        <google-chart [type]="Linetype" [data]="data" [columnNames]="columnNames"
-                            [options]="chartData.options" [width]="350"
-                            style="width: 100%!important;border-radius: 24px !important;overflow: hidden;">
-                        </google-chart>
-                    </p>
-                </div>
-            </div>
-
-        </div>
-        <div class="col-lg-3 col-md-6 my-2">
-            <div class="card">
-                <div class="card-body chartBody">
-                    <p class="h5 text-secondary text-uppercase">
-                        <google-chart [type]="Linetype" [data]="data" [columnNames]="columnNames"
-                            [options]="chartData.options" [width]="350"
-                            style="width: 100%!important;border-radius: 24px !important;overflow: hidden;">
-                        </google-chart>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 my-2">
-            <div class="card-body chartBody">
-                <p class="h5 text-secondary text-uppercase">
-                    <google-chart [type]="Linetype" [data]="data" [columnNames]="columnNames"
-                        [options]="chartData.options" [width]="350"
-                        style="width: 100%!important;border-radius: 24px !important;overflow: hidden;">
-                    </google-chart>
-                </p>
-            </div>
-        </div>
-    </div>
-    <div class="row mt-4">
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-body">
-                    <div class="d-flex align-items-center text-success">
-                        <i class="far fa-heart fa-lg"></i>
-                        <p class="text-success h4 mb-0 mx-2">
-                            heading text
+    
+    <div id="chartDivId">
+        <div class="row mt-4" >
+            <div class="col-lg-3 col-md-6 my-2">
+                <div class="card">
+                    <div class="card-body chartBody">
+                        <p class="h5 text-secondary text-uppercase">
+                            <google-chart [type]="Linetype" [data]="data" [columnNames]="columnNames"
+                                [options]="chartData.options" [width]="350"
+                                style="width: 100%!important;border-radius: 24px !important;overflow: hidden;">
+                            </google-chart>
                         </p>
                     </div>
-                    <div class="table-responsive">
-                        <table class="table table-borderless">
-                            <thead>
-                                <tr>
-                                    <th>Firstname</th>
-                                    <th>Lastname</th>
-                                    <th>Email</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>John</td>
-                                    <td>Doe</td>
-                                    <td>john@example.com</td>
-                                </tr>
-                                <tr>
-                                    <td>Mary</td>
-                                    <td>Moe</td>
-                                    <td>mary@example.com</td>
-                                </tr>
-                                <tr>
-                                    <td>July</td>
-                                    <td>Dooley</td>
-                                    <td>july@example.com</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 my-2">
+                <div class="card">
+                    <div class="card-body chartBody">
+                        <p class="h5 text-secondary text-uppercase">
+                            <google-chart [type]="Linetype" [data]="data" [columnNames]="columnNames"
+                                [options]="chartData.options" [width]="350"
+                                style="width: 100%!important;border-radius: 24px !important;overflow: hidden;">
+                            </google-chart>
+                        </p>
+                    </div>
+                </div>
+    
+            </div>
+            <div class="col-lg-3 col-md-6 my-2">
+                <div class="card">
+                    <div class="card-body chartBody">
+                        <p class="h5 text-secondary text-uppercase">
+                            <google-chart [type]="Linetype" [data]="data" [columnNames]="columnNames"
+                                [options]="chartData.options" [width]="350"
+                                style="width: 100%!important;border-radius: 24px !important;overflow: hidden;">
+                            </google-chart>
+                        </p>
                     </div>
                 </div>
             </div>
+            <div class="col-lg-3 col-md-6 my-2">
+                <div class="card-body chartBody">
+                    <p class="h5 text-secondary text-uppercase">
+                        <google-chart [type]="Linetype" [data]="data" [columnNames]="columnNames"
+                            [options]="chartData.options" [width]="350"
+                            style="width: 100%!important;border-radius: 24px !important;overflow: hidden;">
+                        </google-chart>
+                    </p>
+                </div>
+            </div>
         </div>
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-body">
-                    <div class="d-flex align-items-center text-success">
-                        <i class="far fa-clock fa-lg"></i>
-                        <p class="text-success h4 mb-0 mx-2">
-                            heading text
+        <div class="row mt-4">
+            <div class="col-lg-3 col-md-6 my-2">
+                <div class="card">
+                    <div class="card-body chartBody">
+                        <p class="h5 text-secondary text-uppercase">
+                            <google-chart [type]="Linetype" [data]="data" [columnNames]="columnNames"
+                                [options]="chartData.options" [width]="350"
+                                style="width: 100%!important;border-radius: 24px !important;overflow: hidden;">
+                            </google-chart>
                         </p>
                     </div>
-                    <div class="table-responsive">
-                        <table class="table table-borderless">
-                            <thead>
-                                <tr>
-                                    <th>Firstname</th>
-                                    <th>Lastname</th>
-                                    <th>Email</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>John</td>
-                                    <td>Doe</td>
-                                    <td>john@example.com</td>
-                                </tr>
-                                <tr>
-                                    <td>Mary</td>
-                                    <td>Moe</td>
-                                    <td>mary@example.com</td>
-                                </tr>
-                                <tr>
-                                    <td>July</td>
-                                    <td>Dooley</td>
-                                    <td>july@example.com</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 my-2">
+                <div class="card">
+                    <div class="card-body chartBody">
+                        <p class="h5 text-secondary text-uppercase">
+                            <google-chart [type]="Linetype" [data]="data" [columnNames]="columnNames"
+                                [options]="chartData.options" [width]="350"
+                                style="width: 100%!important;border-radius: 24px !important;overflow: hidden;">
+                            </google-chart>
+                        </p>
                     </div>
-
+                </div>
+    
+            </div>
+            <div class="col-lg-3 col-md-6 my-2">
+                <div class="card">
+                    <div class="card-body chartBody">
+                        <p class="h5 text-secondary text-uppercase">
+                            <google-chart [type]="Linetype" [data]="data" [columnNames]="columnNames"
+                                [options]="chartData.options" [width]="350"
+                                style="width: 100%!important;border-radius: 24px !important;overflow: hidden;">
+                            </google-chart>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 my-2">
+                <div class="card-body chartBody">
+                    <p class="h5 text-secondary text-uppercase">
+                        <google-chart [type]="Linetype" [data]="data" [columnNames]="columnNames"
+                            [options]="chartData.options" [width]="350"
+                            style="width: 100%!important;border-radius: 24px !important;overflow: hidden;">
+                        </google-chart>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center text-success">
+                            <i class="far fa-heart fa-lg"></i>
+                            <p class="text-success h4 mb-0 mx-2">
+                                heading text
+                            </p>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-borderless">
+                                <thead>
+                                    <tr>
+                                        <th>Firstname</th>
+                                        <th>Lastname</th>
+                                        <th>Email</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>John</td>
+                                        <td>Doe</td>
+                                        <td>john@example.com</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mary</td>
+                                        <td>Moe</td>
+                                        <td>mary@example.com</td>
+                                    </tr>
+                                    <tr>
+                                        <td>July</td>
+                                        <td>Dooley</td>
+                                        <td>july@example.com</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center text-success">
+                            <i class="far fa-clock fa-lg"></i>
+                            <p class="text-success h4 mb-0 mx-2">
+                                heading text
+                            </p>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-borderless">
+                                <thead>
+                                    <tr>
+                                        <th>Firstname</th>
+                                        <th>Lastname</th>
+                                        <th>Email</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>John</td>
+                                        <td>Doe</td>
+                                        <td>john@example.com</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mary</td>
+                                        <td>Moe</td>
+                                        <td>mary@example.com</td>
+                                    </tr>
+                                    <tr>
+                                        <td>July</td>
+                                        <td>Dooley</td>
+                                        <td>july@example.com</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+    
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+  
 
 </div>
