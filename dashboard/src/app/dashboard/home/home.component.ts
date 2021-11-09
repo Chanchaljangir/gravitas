@@ -10,9 +10,9 @@ export class HomeComponent implements OnInit {
 
   chartData = {
     options: {
-      hAxis: {
-        title: 'Month'
-      },
+      // hAxis: {
+      //   title: 'Month'
+      // },
       // vAxis:{
       //    title: 'Sell'
       // },
@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
       // series: { 0: { color: 'green', lineWidth: 1 } },
       // sizeAxis: { minValue: 11, maxSize: 11, maxValue: 11, minSize: 11 },
     },
-    width: 1000,
+    width: 270,
     height: 400
   };
   columnNames: any;
@@ -35,20 +35,20 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.columnNames = ["Month", "Apple", "Mi"]
+    this.columnNames = ["Month", "Apple"]
     this.data = [
-      ["Jan", 500, 600],
-      ["Feb", 800, 900],
-      ["Mar", 400, 600],
-      ["Apr", 600, 500],
-      ["May", 400, 300],
-      ["Jun", 750, 700],
-      ["Jul", 800, 710],
-      ["Aug", 810, 720],
-      ["Sep", 820, 730],
-      ["Oct", 900, 840],
-      ["Nov", 910, 850],
-      ["Dec", 920, 890]
+      ["Jan", 500],
+      ["Feb", 800],
+      ["Mar", 400],
+      ["Apr", 600],
+      ["May", 400],
+      ["Jun", 750],
+      ["Jul", 800],
+      ["Aug", 810],
+      ["Sep", 820],
+      ["Oct", 900],
+      ["Nov", 910],
+      ["Dec", 920]
     ]
   }
 

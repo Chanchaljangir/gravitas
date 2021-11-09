@@ -34,22 +34,25 @@
     <div class="row mt-4">
         <div class="col-lg-3 col-md-6 my-2">
             <div class="card">
-                <div class="card-body">
+                <div class="card-body chartBody">
                     <p class="h5 text-secondary text-uppercase">
-                        <google-chart 
-                        [type]="Linetype" 
-                        [data]="data" 
-                        [columnNames]="columnNames" 
-                        [options]="chartData.options">
-                    </google-chart>
+                        <google-chart [type]="Linetype" [data]="data" [columnNames]="columnNames"
+                            [options]="chartData.options" [width]="350"
+                            style="width: 100%!important;border-radius: 24px !important;overflow: hidden;">
+                        </google-chart>
                     </p>
                 </div>
             </div>
         </div>
         <div class="col-lg-3 col-md-6 my-2">
             <div class="card">
-                <div class="card-body">
-                    <p class="h5 text-secondary text-uppercase">h5 Bootstrap heading</p>
+                <div class="card-body chartBody">
+                    <p class="h5 text-secondary text-uppercase">
+                        <google-chart [type]="Linetype" [data]="data" [columnNames]="columnNames"
+                            [options]="chartData.options" [width]="350"
+                            style="width: 100%!important;border-radius: 24px !important;overflow: hidden;">
+                        </google-chart>
+                    </p>
                 </div>
             </div>
 
@@ -152,5 +155,5 @@
             </div>
         </div>
     </div>
-    
+
 </div>
