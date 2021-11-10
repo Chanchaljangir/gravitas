@@ -17,9 +17,9 @@ Run <b>npm i</b> command for downloads a package and it's dependencies<br>
 
 
 # Project description 
-<p><b>Project Frontend</b>I developed Frontend in Angular, TypeScript, JavaScript</p><br>
-<p><b>Project nBackend</b>Backend end developed in NodeJS with ExpressJs framework, Javascript.</p><br>
-<p><b>Database</b>I used the MongoDB database for this.</p><br>
-<p><b>Project Designing</b> i use bootstrap 5, google chart, and my own CSS.</p><br>
+<p><b>Project Frontend</b> I developed Frontend in Angular, TypeScript, JavaScript</p><br>
+<p><b>Project Backend</b> Backend end developed in NodeJS with ExpressJs framework, Javascript.</p><br>
+<p><b>Database</b> I used the MongoDB database for this.</p><br>
+<p><b>Project Designing</b> I use bootstrap 5, google chart, and my own CSS.</p><br>
 <p><b>Other Libraries:</b> jspdf, html2canvas, datePicker</p><br>
 <p>This project is completely developed in MEAN stack.</p><br>
