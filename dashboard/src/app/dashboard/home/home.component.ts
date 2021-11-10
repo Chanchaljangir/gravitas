@@ -98,7 +98,6 @@ export class HomeComponent implements OnInit {
       this.lineChart.push(chartData)
     });
     this.loadChart = true;
-    console.log("this.lineChart",this.lineChart)
   }
   onExportSelect(e) {
     let eventData = e.target.value
