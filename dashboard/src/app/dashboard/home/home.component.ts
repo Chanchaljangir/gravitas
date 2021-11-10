@@ -63,28 +63,6 @@ export class HomeComponent implements OnInit {
       ["Nov", 910],
       ["Dec", 920]
     ]
-    this.chartData1 = {
-      options: {
-        legend: { position: 'top' },
-      },
-      width: 270,
-      height: 400,
-      columnNames: ["Month", "Total Messages"],
-      data: [
-        ["Jan", 500],
-        ["Feb", 800],
-        ["Mar", 400],
-        ["Apr", 600],
-        ["May", 400],
-        ["Jun", 750],
-        ["Jul", 800],
-        ["Aug", 810],
-        ["Sep", 820],
-        ["Oct", 900],
-        ["Nov", 910],
-        ["Dec", 920]
-      ]
-    }
     this.getData();
   }
   getData(){
